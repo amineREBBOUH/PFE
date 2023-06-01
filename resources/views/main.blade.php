@@ -183,69 +183,7 @@
             <div class="btnC"> <button>Descover The Collctions</button></div> 
         </div>
         {{-- end clothes --}}
-        {{-- history --}}
-        <h1 id="ev">The evaluation of create PlayStation</h1>
-        <div id="history0">
-        <div id="history">
-            
-            <div class="Hitem">
-                <div class="Hinfo">
-                    <div>
-                        <h1> <img src={{asset('/Media/logo2.png')}} alt="" /> PlayStation I <span>(1994 / 1995)</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/> Dolorum, asperiores.</p>
-                        <button>Explore Now</button>
-                    </div>
-                </div>
-                <div class="one h">
-                </div>
-            </div>
-            <div class="Hitem">
-                <div class="Hinfo">
-                    <div>
-                    <h1> <img src={{asset('/Media/logo2.png')}} alt="" /> PlayStation II <span>(2000/2001)</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/> Dolorum, asperiores.</p>
-                        <button>Explore Now</button>
-                    </div>
-                </div>
-                <div class="two h">
-                </div>
-            </div>
-            <div class="Hitem">
-                <div class="Hinfo">
-                    <div>
-                    <h1> <img src={{asset('/Media/logo2.png')}} alt="" /> PlayStation III <span>(2007 / 2008)</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/> Dolorum, asperiores.</p>
-                        <button>Explore Now</button>
-                    </div>
-                </div>
-                <div class="tree h">
-                </div>
-            </div>
-            <div class="Hitem">
-                <div class="Hinfo">
-                    <div>
-                    <h1> <img src={{asset('/Media/logo2.png')}} alt="" /> PlayStation IV <span>(2015 / 2016)</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/> Dolorum, asperiores.</p>
-                        <button>Explore Now</button>
-                    </div>
-                </div>
-                <div class="four h">
-                </div>
-            </div>
-            <div class="Hitem">
-                <div class="Hinfo">
-                    <div>
-                    <h1> <img src={{asset('/Media/logo2.png')}} alt="" /> PlayStation V <span>(2020 / 2021)</span></h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. <br/> Dolorum, asperiores.</p>
-                        <button>Explore Now</button>
-                    </div>
-                </div>
-                <div class="five h">
-                </div>
-            </div>
-        </div>
-        </div>
-        {{-- end history --}}
+
         {{-- social media --}}
         <div id="Social">
             <h1>Follow Us In the Social Networks</h1>

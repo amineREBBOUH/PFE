@@ -119,16 +119,16 @@ move1();
 const decrease=()=>{
 back();
 }
-//history
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            entry.target.className="show";
-        } else {
-            entry.target.className="hidden";
-        }
-      })
-  },{rootMargin: ' -50% 0% -50% 0%'})
+// //history
+// const observer = new IntersectionObserver(entries => {
+//     entries.forEach(entry => {
+//         if (entry.isIntersecting) {
+//             entry.target.className="show";
+//         } else {
+//             entry.target.className="hidden";
+//         }
+//       })
+//   },{rootMargin: ' -50% 0% -50% 0%'})
   
-  const blogs = document.getElementById('history0')
-  observer.observe(blogs)
+//   const blogs = document.getElementById('history0')
+//   observer.observe(blogs)
