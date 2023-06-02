@@ -16,7 +16,7 @@
     <div class="sign left">
        <h1> <span class="lettre">S</span>ign In</h1>
        <div class="social_media">
-        <button>Login with google</button>
+        <a href="{{route('google')}}"><button>Login with google</button></a>
        </div>
        <span class="chose">Or use Your account</span>
     <form action="{{ route('login') }}" method="post">

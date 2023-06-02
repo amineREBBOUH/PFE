@@ -37,6 +37,12 @@ width: 100%;
 justify-content: center;
 align-items: center;
 }
+.container .sign .social_media a{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  text-decoration: none;
+    }
 .container .sign .social_media button{
     width: 55%;
     height: 40px;

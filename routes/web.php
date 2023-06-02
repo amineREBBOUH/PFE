@@ -69,12 +69,11 @@ Route::get('/', function () {
     return view('main',["games1"=>$games1,"games2"=>$games2]);
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
-Route::middleware(['auth'])->group(function () {
 
-    //store
+Route::middleware(['auth'])->group(function () {
+ //route foe users
+ Route::middleware(['user'])->group(function () {
+     //store
     Route::get('/store',function (Request $req)
     {
         return view('store.index',["type"=>"home page"]);
@@ -94,5 +93,13 @@ Route::middleware(['auth'])->group(function () {
     {
         return view('store.software',["type"=>"software"]);
     })->name('store.software');
+ });
+
+ Route::middleware(['admin'])->group(function () {
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->middleware(['auth'])->name('dashboard');
+ });
+    
 });
 require __DIR__.'/auth.php';
