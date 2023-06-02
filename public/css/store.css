@@ -1,0 +1,98 @@
+html,body{
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+nav{
+    width: 100%;
+    height: 70px;
+    /* background-color:  rgb(47, 130, 251); */
+    /* background-color: #58a0f7; */
+    /* background-color: rgb(74 73 70); */
+    background-color: #212121;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+nav .logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40%;
+    /* background-color: red; */
+}
+nav .logo #logo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+
+}
+nav .logo #logo span{
+    font-size: 23px;
+
+}
+nav .logo  img{
+   width: 70px;
+}
+nav .logo .items ul{
+    display: flex;
+    gap: 20px;
+}
+nav .logo .items ul li{
+   list-style: none;
+   font-weight: 500;
+   font-size: 18px;
+   color: white;
+   cursor: pointer;
+   transition-duration: 0.5s;
+   position: relative;
+   
+}
+nav .logo .items ul li ul{ 
+    visibility: hidden;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  margin-top: 1rem;
+  left: 0;
+  top: 5px;
+  display: none;
+  background-color: white;
+ }
+ nav .logo .items ul li:hover > ul,
+ nav .logo .items ul li ul:hover {
+  visibility: visible;
+  opacity: 1;
+  display: block;
+}
+nav .logo .items ul .active{
+    
+    color:rgb(47, 130, 251) ;
+ }
+nav .logo .items ul li i{
+    position: relative;
+    top: 3px;
+    
+ }
+nav .features{
+    display: flex;
+   gap: 20px;
+   justify-content: flex-end;
+   width: 40%;
+   /* background-color: yellow; */
+}
+nav .features i{
+    font-size: 23px;
+    color: white;
+}
+/* software */
+#software{
+    width: 100%;
+    height: 90%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+/* end software */

@@ -1,0 +1,256 @@
+body,html{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 20px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-image: url('https://my.account.sony.com/central/signin/9fe91826ca150e7fa133749535fa2ed86e5c1b70/assets/images/wallpaper.jpg');
+}
+.container{
+    width: 55%;
+    height: auto;
+    display: flex;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    overflow-x: hidden;
+    border-radius: 2% /5%;
+}
+.container .sign{
+    width: 50%;
+   /* background-color: yellow;*/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 0;    
+}
+.container .sign .social_media{
+display: flex;
+gap: 18px;
+margin-bottom: 20px;
+width: 100%;
+justify-content: center;
+align-items: center;
+}
+.container .sign .social_media button{
+    width: 55%;
+    height: 40px;
+    color: white;
+    background-color: #0a72ca;
+    border: none;
+    
+    }
+.container .sign .social_media button:is(:hover,:focus){
+        outline: 2px solid #0a72ca;
+        outline-offset: 3px;
+     }
+/* .container .sign .social_media span{
+    width: 30px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+   /* border:1px solid #f12d53;
+    border-radius: 50%;
+    box-shadow: rgb(239, 63, 57) 3px 1px 20px -1px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: -webkit-grab; cursor: grab;
+    } */
+.container .sign .chose{
+    text-align: center;
+    margin: 15px;   
+}
+
+.container .sign h1{
+    text-align: center;
+    
+}
+.container .sign form{
+   /* background-color: rgb(22, 177, 14);*/
+   /* height: 60%;*/
+   height: auto;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+.container .sign form .fields{
+   /* background-color: rgb(13, 85, 153);*/
+    width: 75%;
+    height: 100%;
+    
+}
+.container .sign form .fields input{
+    width: 95%;
+    height: 30px;
+    margin: 10px 0px; 
+    caret-color:#0a72ca;
+}
+.container .sign form .fields input:focus {
+    outline: 1.5px solid #0a72ca;
+}
+.container .sign form .fields label{
+    font-size: 19px;
+    color: #475569;
+    font-weight: 300;
+    font-family: Arial, Helvetica, sans-serif;   
+}
+.container .sign form .fields #btns{
+    width: 100%;
+   /* background-color: red;*/
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    margin: 15px 0px; 
+}
+.container .sign form .fields #btns button{
+   background-color:#0a72ca;
+   padding: 10px 30px;
+   border: none;
+   color: white;
+   cursor: pointer;
+   border-radius: 12% /50%;
+}
+.container .sign form .fields #btns button:is(:hover,:focus){
+    outline: 3px solid #0a72ca;
+    outline-offset: 3px;
+ }
+.container .map{
+    width: 50%;
+    background-image: linear-gradient(to left,#9fb6d8,#0a70ca97);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+    z-index: 2;
+}
+.container .map span{
+   font-weight: 500;
+   font-size: 35px;
+}
+.container .map button a{
+    text-decoration: none;
+    color: #0a72ca;
+ }
+.container .map button{
+    background-color: #ffffff;
+    color: #0a72ca;
+    padding: 10px 30px;
+   border: none;
+   cursor: pointer;
+   font-size: 15px;
+   border-radius: 12% /50%;
+ }
+ .container .map  button:is(:hover,:focus){
+    outline: 3px solid #ffffff;
+    outline-offset: 3px;
+ }
+.lettre{
+    color: #0a72ca;
+}
+/*animation*/
+.container .left{
+   
+    position: relative;
+    left: 0;
+    animation: anim1 1s linear;
+      
+  }
+@keyframes anim1 {
+    0%{
+        left: 30vw;
+    }
+    50%{
+     left: 15vw;
+    }
+    100%{
+        left: 0vw;
+       }
+}
+.container .right{
+   
+    position: relative;
+    right: 0;
+    animation: anim2 1s linear;
+
+
+}
+@keyframes anim2 {
+    0%{
+        right: 30vw;
+    }
+    50%{
+     right: 15vw;
+    }
+    100%{
+        right: 0vw;
+       }
+}
+/*responsive*/
+@media only screen and (max-width: 1300px) {
+    .container{
+        width: 90%;
+        background-color: rgba(255, 255, 255, 0.481);
+        box-shadow: none;
+        border-radius: 0;
+        
+    }
+}
+@media only screen and (max-width: 800px) {
+    .container{
+        width: 80%;
+        background-color: rgba(255, 255, 255, 0.481);
+        box-shadow: none;
+        border-radius: 0;
+           
+    }
+    .container .sign{
+        width: 100%;
+    }
+    .container .map{
+        display: none;    
+    }
+}
+/*social media logo*/
+.fa-google{
+color: #ea403c;
+animation:  changeColor 3s ease-in infinite;
+}
+@keyframes changeColor {
+    0%{
+        color: #ea403c;
+
+    }
+    35%{
+        color: #faba41;
+
+    }
+    75%{
+        color: #31a85e;
+
+    }
+    100%{
+        color: #4587ec;
+
+    }
+    
+
+}
+.fa-linkedin-in{
+   color: rgb(17 103 188);
+}
+.fa-facebook-f{
+color: #19a2f2;
+}
+.error{
+    color: red;
+    margin: 5px 0px;
+}

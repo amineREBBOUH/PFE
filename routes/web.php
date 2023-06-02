@@ -68,11 +68,31 @@ Route::get('/', function () {
     ];
     return view('main',["games1"=>$games1,"games2"=>$games2]);
 });
-Route::get('/Login',function ()
-{
-    return view('login');
-})->name('login');
-Route::get('/register',function ()
-{
-    return view('register');
-})->name('register');
+
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth'])->name('dashboard');
+Route::middleware(['auth'])->group(function () {
+
+    //store
+    Route::get('/store',function (Request $req)
+    {
+        return view('store.index',["type"=>"home page"]);
+    })->name('store');
+    //games
+    Route::get('/store/games',function ()
+    {
+        return view('store.games',["type"=>"games"]);
+    })->name('store.games');
+    //random_key
+    Route::get('/store/random_key',function ()
+    {
+        return view('store.random_key',["type"=>"random_key"]);
+    })->name('store.random_key');
+    //software
+    Route::get('/store/software',function ()
+    {
+        return view('store.software',["type"=>"software"]);
+    })->name('store.software');
+});
+require __DIR__.'/auth.php';

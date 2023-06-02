@@ -11,7 +11,7 @@
     {{-- nav bar --}}
     <nav>
           <div class="div1">
-            <img src={{asset('/Media/logo.png')}} alt="" />
+            <img src={{asset('/Media/digital.png')}} alt="" />
             <ul>
                 <li ><a href=""name="G" class="a ">Games <i class="fa-solid fa-angle-right" ></i></a></li>
                 <li ><a href=""name="M"class="a ">Material <i class="fa-solid fa-angle-right"></i></a></li>
@@ -21,8 +21,7 @@
             </ul>
           </div>
           <div class="div2">
-             <button>login</button>
-             <button>register</button>
+            <a href="{{route('login')}}"><button>login</button></a>
              <span><i class="fa fa-search" aria-hidden="true"></i></span>
              <span><i class="fa fa-bars" aria-hidden="true"id="bars"></i></span>
           </div>
@@ -31,7 +30,7 @@
         {{-- end nav bar --}}
         {{-- body --}}
         <div id="body">
-            <img src={{asset('/Media/logo2.png')}} alt="" id="img1"/>
+            <img src={{asset('/Media/digital.png')}} alt="" id="img1"/>
             <div id="pict1" class="bag anim">
                 <div>
                     <h1>Great Game You can't miss in 2023</h1>
@@ -200,7 +199,7 @@
             <div class="container">
              <div class="row">
               <div class="footer-col sp">
-                  <img src={{asset('/Media/logo02.png')}} alt=""/>	
+                  <img src={{asset('/Media/digital.png')}} alt=""/>	
               </div>
                  <div class="footer-col">
                      <h4>company</h4>
