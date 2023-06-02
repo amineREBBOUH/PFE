@@ -13,10 +13,10 @@
         <a href="/store">  <div id="logo"><img src="{{asset('/Media/digital.png')}}" alt=""><span>Digital</span></div></a>
         <div class="items">
             <ul>
-                <li class="active"><a href="/store/games">games</a></li>
-                <li><a href="/store/random_key">random key</a></li>
-                <li><a href="/store/software">software</a></li>
-                <li><i class="fa-solid fa-list"></i> categories 
+                <li  @if (Request::is('store/games')) class="item active" @else class="item" @endif><a href="/store/games">games</a></li>
+                <li  @if (Request::is('store/random_key')) class="item active" @else class="item" @endif><a href="/store/random_key">random key</a></li>
+                <li  @if (Request::is('store/software')) class="item active" @else class="item" @endif><a href="/store/software">software</a></li>
+                <li  @if (Request::is('Gallery/create')) class="item active" @else class="item" @endif><i class="fa-solid fa-list"></i> categories 
                     <ul class="dropdown">
                         <li><a href="#">Sub-1</a></li>
                         <li><a href="#">Sub-2</a></li>

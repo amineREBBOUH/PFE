@@ -10,10 +10,18 @@ nav{
     /* background-color:  rgb(47, 130, 251); */
     /* background-color: #58a0f7; */
     /* background-color: rgb(74 73 70); */
-    background-color: #212121;
+    /* background-color: #212121; */
+    background-color: #ffffff;
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+nav a {
+    text-decoration: none;
+    color: rgb(88 160 247);
+}
+nav .logo .items ul li:first-letter {
+    text-transform: uppercase;
 }
 nav .logo{
     display: flex;
@@ -26,7 +34,7 @@ nav .logo #logo{
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+    color: rgb(88 160 247);
 
 }
 nav .logo #logo span{
@@ -44,12 +52,22 @@ nav .logo .items ul li{
    list-style: none;
    font-weight: 500;
    font-size: 18px;
-   color: white;
+   color: rgb(88 160 247);
    cursor: pointer;
    transition-duration: 0.5s;
    position: relative;
    
 }
+nav .logo .items ul .active{
+    
+    color: #FF0060;
+    text-decoration: underline;
+ }
+ nav .logo .items ul .active a{
+    
+    color: #FF0060;
+    text-decoration: underline;
+ }
 nav .logo .items ul li ul{ 
     visibility: hidden;
   opacity: 0;
@@ -59,7 +77,7 @@ nav .logo .items ul li ul{
   left: 0;
   top: 5px;
   display: none;
-  background-color: white;
+  background-color: rgb(88 160 247);
  }
  nav .logo .items ul li:hover > ul,
  nav .logo .items ul li ul:hover {
@@ -85,7 +103,7 @@ nav .features{
 }
 nav .features i{
     font-size: 23px;
-    color: white;
+    color: rgb(88 160 247);
 }
 /* software */
 #software{
