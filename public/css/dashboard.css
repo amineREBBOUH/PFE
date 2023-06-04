@@ -259,6 +259,11 @@ body.dark .mode .sun-moon i.moon{
     border-radius: 6px;
     cursor: pointer;
 }
+.menu-bar .bottom-content #logout{
+    border: none;
+    width: 100%;
+    background-color: transparent;
+}
 .toggle-switch .switch{
     position: relative;
     height: 22px;

@@ -86,12 +86,18 @@
             </div>
 
             <div class="bottom-content">
-                <li class="">
-                    <a href="#" class="logOut">
-                        <i class='bx bx-log-out icon' ></i>
-                        <span class="text nav-text">Logout</span>
-                    </a>
-                </li>
+                <form method="POST" action="{{ route('logout') }}">
+                    @csrf
+                     <button type="submit" id="logout">
+                        <li class="">
+                            <a href="#" class="logOut">
+                                <i class='bx bx-log-out icon' ></i>
+                                <span class="text nav-text">Logout</span>
+                            </a>
+                        </li>
+                     </button>
+                </form>
+                
 
                 <li class="mode">
                     <div class="sun-moon">
