@@ -68,11 +68,12 @@ Route::get('/', function () {
     ];
     return view('main',["games1"=>$games1,"games2"=>$games2]);
 });
-
-
+Auth::routes([
+    'verify'=>true
+]);
 Route::middleware(['auth'])->group(function () {
  //route foe users
- Route::middleware(['user'])->group(function () {
+ Route::middleware(['user','verified'])->group(function () {
      //store
     Route::get('/store',function (Request $req)
     {
@@ -97,7 +98,7 @@ Route::middleware(['auth'])->group(function () {
 
  Route::middleware(['admin'])->group(function () {
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('admin.dashboard');
     })->middleware(['auth'])->name('dashboard');
  });
     

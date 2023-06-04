@@ -131,10 +131,10 @@ nav .div2 button {
 @keyframes rem {
     from {
         top: 0vh;
-        opacity: 1;
+        opacity: 0;
     }
     to {
-        top: 170vh;
+        top: 100vh;
         opacity: 1;
     }
 }
