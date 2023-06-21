@@ -53,4 +53,9 @@ use App\Http\Controllers\UserController;
     Route::get('/store/cancel',[UserController::class, 'cancel'])->name('store.cancel');
     Route::post('/store/order',[UserController::class, 'order'])->name('store.order');
 
+    Route::get('/store/details/{id}',[UserController::class, 'details'])->name('store.details');
+    Route::post('/store/like',[UserController::class, 'like'])->name('store.like');
+    Route::post('/store/deslike',[UserController::class, 'deslike'])->name('store.deslike');
+    Route::post('/store/remove_like',[UserController::class, 'remove_like'])->name('store.remove_like');
+
 

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use Validator;
 use App\Models\Card;
+use App\Models\Like;
 use App\Models\User;
 use App\Models\Order;
 use App\Mail\MailKeys;
@@ -12,6 +14,7 @@ use App\Models\Category;
 use App\Models\Cardusers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Mail;
 
 class UserController extends Controller
@@ -24,6 +27,12 @@ class UserController extends Controller
     public function index()
     {
         //
+        // $products=Product::take(5)->get();
+        // foreach ($products as $key => $poducts) {
+        //     # code...
+        //     dump($poducts->likes->where('user_id',Auth::user()->id));
+        // }
+        // dd();
         $category=Category::where('name','games')->first();
         $products=$category->products;
         return view('store.index',["type"=>$category->name,"products"=>$products]);
@@ -158,16 +167,19 @@ class UserController extends Controller
     }
     public function wichlist(Type $var = null)
     {        
-       
-        return view('store.wichlist');
+       $likes=Like::where('user_id',Auth::user()->id)->get();
+      
+        return view('store.wichlist',["likes"=>$likes]);
     }
     public function categories(Request $request,$type)
     {
         $products=Category::where('name',$type)->first()->products()->paginate(3);
         //dd($products);
         $gamesC=Category::where('name','games')->first()->products()->count();
-        $filmsC=Category::where('name','films')->first()->products()->count();
-        return view('store.category',["products"=>$products,"gamesC"=>$gamesC,"filmsC"=>$filmsC]);
+        $filmsC=Category::where('name','subscriptions')->first()->products()->count();
+        $softwareC=Category::where('name','software')->first()->products()->count();
+
+        return view('store.category',["products"=>$products,"gamesC"=>$gamesC,"filmsC"=>$filmsC,"softwareC"=>$softwareC]);
     }
     public function seeting(Type $var = null)
     {
@@ -177,7 +189,19 @@ class UserController extends Controller
     }
     public function seetingPost(Request $request)
     {
-        dd(22);
+        $validator = Validator::make($request->all(), [
+            'name' => 'bail|required',
+            'email'=>'bail|required|email',
+            
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        } 
+        $user= User::find(Auth::user()->id);
+        $user->name=$request->name;
+        $user->email=$request->email;
+        $user->save();
+        return back();
         }
     public function password(Type $var = null)
     {
@@ -185,7 +209,20 @@ class UserController extends Controller
     }
     public function passwordPost(Request $request)
     {
-        dd(22);
+        $validator = Validator::make($request->all(), [
+            'password' => 'bail|required|confirmed',
+            'password_confirmation'=>'bail|required|',
+            
+        ]);
+        if ($validator->fails()) {
+            return back()->withErrors($validator)->withInput();
+        }
+ 
+        $user= User::find(Auth::user()->id);
+        $user->password=Hash::make($request->password);
+        $user->save();
+        return back();
+        
     }
     public function search(Request $request)
     {
@@ -348,6 +385,47 @@ class UserController extends Controller
 
             }
             
+        }
+        public function details($id)
+        {
+            # code...
+            $product=Product::find($id);
+            return view('store.details',["product"=>$product]);
+        }
+        public function like(Request $request)
+        {
+            # code...
+            $like=new Like;
+            $like->user_id=Auth::user()->id;
+            $like->product_id=$request->id;
+            if ($like->save()) {
+                return response()->json(['like'], 200);
+            } else {
+                return response()->json(['error'], 200);
+                }
+            
+            
+        }
+        public function deslike(Request $request)
+        {
+            # code...
+            $like= Like::where('user_id',Auth::user()->id)
+            ->where('product_id',$request->id);
+            if ($like->delete()) {
+                return response()->json(["dislike"], 200);
+            } else {
+                return response()->json(["error"], 200);
+            }
+            
+            
+        }
+
+        public function remove_like(Request $request)
+        {
+            $like=Like::find($request->id);
+            if ($like->delete()) {
+                return response()->json(['deleted'], 200);
+            }
         }
 
 }

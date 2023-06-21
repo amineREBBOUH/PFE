@@ -25,8 +25,8 @@
         <div class="col-md-6">
             <div class="form-group">
                   <label>Confirm new password</label>
-                  <input type="password" class="form-control" name="confirme">
-                  @error('confirme')
+                  <input type="password" class="form-control" name="password_confirmation">
+                  @error('password_confirmation')
                   <p class="error">{{$message}}</p>
                       
                   @enderror

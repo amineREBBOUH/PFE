@@ -4,7 +4,7 @@
 <div class="productsS">
     @foreach ($products as $product)
     <div class="parent">
-        @if ($category=="films")
+        @if ($category=="subscriptions")
         <div class="key">
             <div class="hide" onclick="hide(this)"> <i class="fa fa-times"></i></div>  
               <form >

@@ -13,13 +13,13 @@
 <figure >
     {{-- style="--c:#fff5" --}}
     <img src="{{asset('images/films.jpg')}}" alt="">
-    <figcaption>the films</figcaption>
+    <figcaption>the subscriptions</figcaption>
 </figure>
 </a>
 <a href="{{route('dashboard.type'). '?category=3'}}">
     <figure >
         <img src="{{asset('images/iptv.jpg')}}" alt="">
-        <figcaption>the Iptv</figcaption>
+        <figcaption>the software</figcaption>
     </figure>
     </a>
 </div>

@@ -107,7 +107,7 @@ const pie=new Chart(ctuser,{
 const bar=new Chart(ctx, {
   type: 'bar',
   data: {
-    labels: ['GAMES', 'FILMS', 'IPTV'],
+    labels: ['GAMES', 'subscrption', 'software'],
     datasets: [{
       label: 'product',
       data: products,

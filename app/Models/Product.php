@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Like;
 use App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -23,5 +24,10 @@ class Product extends Model
     {
         # code...
         return $this->hasMany(Order::class,"product_id","id");
+    }
+    public function Likes(Type $var = null)
+    {
+        # code...
+        return $this->hasMany(Like::class,"product_id","id");
     }
 }

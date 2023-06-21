@@ -17,9 +17,9 @@
             </div>
             <div class="types">
                 <ul>
-                    <li><div><a href="{{route('store.categories',"games")}}"> Games ff</a></div> <div><hr></div><div>{{$gamesC}}</div> </li>
-                    <li><div><a href="{{route('store.categories',"films")}}"> filmd ff</a></div> <div><hr></div><div>{{$filmsC}}</div> </li>
-                    <li><div><a href="{{route('store.categories',"software")}}"> software ff</a></div> <div><hr></div><div>{{$gamesC}}</div> </li>
+                    <li><div><a href="{{route('store.categories',"games")}}"> Games </a></div> <div><hr></div><div>{{$gamesC}}</div> </li>
+                    <li><div><a href="{{route('store.categories',"subscriptions")}}"> Subscriptions </a></div> <div><hr></div><div>{{$filmsC}}</div> </li>
+                    <li><div><a href="{{route('store.categories',"software")}}"> Software </a></div> <div><hr></div><div>{{$softwareC}}</div> </li>
                    
                 </ul>
             </div>

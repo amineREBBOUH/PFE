@@ -11,8 +11,20 @@
          
          <div class="div{{(int)$key+1}} item"style="background-image: url(data:image/png;base64,{{$product['pict']}});">
             <div class="info">
-                <div class="heart"> <i class="fa-solid fa-heart"></i></div>
-                <div class="inf"><a href=""><i class="fa-solid fa-circle-info"></i></a></div>
+              @if ($product->likes->isNotEmpty())
+                @if ($product->likes->where('user_id',Auth::user()->id)->first())
+                <div class="heart"> <i class="fa-solid fa-heart" style="color: red" onclick="like(this,{{$product->id}})"></i></div>
+
+                @else
+                <div class="heart"> <i class="fa-solid fa-heart" style="color: white"onclick="like(this,{{$product->id}})"></i></div>
+
+                @endif
+
+              @else
+              <div class="heart"> <i class="fa-solid fa-heart" style="color: white"onclick="like(this,{{$product->id}})"></i></div>
+
+              @endif
+                <div class="inf"><a href="{{route('store.details',$product->id)}}"><i class="fa-solid fa-circle-info"></i></a></div>
                 <p>{{$product['name']}}</p>
                 <p>{{count($product->Keys->where('status','not_yet'))}}</p>
                 @if ($product->cards->isNotEmpty()) 
@@ -112,4 +124,29 @@
           }
       })
       }
+      function like(e,id) {
+        if(e.style.color=='red'){
+            console.log("deslike");
+            e.style.color='white'
+            var path="{{route('store.deslike')}}"
+        }
+        else if(e.style.color=='white'){
+          console.log('like');
+          e.style.color='red'
+          var path="{{route('store.like')}}"
+        }
+        $.ajax({
+            url: path,
+            type: 'POST',
+            dataType: 'JSON',
+            data: { '_token': '{{csrf_token()}}', id: id },
+            success: function (res) {
+                console.log(res);
+               
+  
+            }
+        })
+        
+      }
+      
      </script>

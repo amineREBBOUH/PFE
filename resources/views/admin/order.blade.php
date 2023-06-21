@@ -175,6 +175,7 @@
 </div>
 <script>
     function orderN() {
+        console.log(44);
       $.ajax({
         url: "{{route('dashboard.orderN')}}",
         type: 'POST',

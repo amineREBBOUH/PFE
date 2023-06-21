@@ -321,7 +321,7 @@ body.dark .switch::before{
     height: 100% !important;
     overflow-y: scroll;
     width: 100%;
-    background-color: #d0d2d1;
+    /* background-color: #d0d2d1; */
 }
 
 .sidebar.close ~ .home{
@@ -883,8 +883,7 @@ h1 small {
   top: 10px;
 }
 .avatar-upload .avatar-edit input {
-  display: none;
-}
+visibility: hidden;}
 .avatar-upload .avatar-edit input + label {
   display: inline-block;
   width: 50px;
@@ -902,8 +901,8 @@ h1 small {
   align-items: center;
 }
 .avatar-upload .avatar-edit input + label:hover {
-  background: #f1f1f1;
-  border-color: #d6d6d6;
+  background: #f1f1f100;
+  border-color: #d6d6d600;
 }
 .avatar-upload .avatar-edit input + label:after {
   content: "\f040";

@@ -146,6 +146,7 @@ class AdminController extends Controller
         $product->old_price=$request->old_price;
         $product->new_price=$request->new_price;
         $product->pict=$image;
+        $product->desc="";
         if ($product->save()) {
             return redirect('/dashboard/products');
 
@@ -301,7 +302,7 @@ class AdminController extends Controller
         if ($validator->fails()) {
             return back()->withErrors($validator)->withInput();
         } 
-        //dd("ee");
+        
 
       
         $product=Product::find($request->id);
@@ -310,12 +311,13 @@ class AdminController extends Controller
         $product->category_id=$request->category;
         $product->old_price=$request->old_price;
         $product->new_price=$request->new_price;
+        
         if ($request->hasFile('pict')) {
             $image = base64_encode(file_get_contents($request->file('pict')->Path()));
             $product->pict=$image;
-
+            //dd( $image);
         }
-        //dd('eee');
+       
 
         if ($product->save()) {
             //return redirect('/dashboard/products');

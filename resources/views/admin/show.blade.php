@@ -3,12 +3,13 @@
 <div class="container">
 
 	<div class="card">
-				<form class="card-form" action="{{route('product.showPost')}}" method="POST">
+				<form class="card-form" action="{{route('product.showPost')}}" method="POST" enctype="multipart/form-data">
                     @csrf
+                    <input type="hidden" name="category"value="{{$product->category_id}}">
                    <input type="hidden" name="id" value="{{$product->id}}">
             <div class="avatar-upload">
                 <div class="avatar-edit">
-                    <input type='file' id="imageUpload" accept=".png, .jpg, .jpeg"name="pict" />
+                    <input type='file' id="imageUpload" name="pict" />
                     <label for="imageUpload"></label>
                 </div>
                 <div class="avatar-preview">
@@ -49,6 +50,7 @@
 		
 	</div>
 </div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.0/jquery.min.js" integrity="sha512-3gJwYpMe3QewGELv8k/BX9vcqhryRdzRMxVfq6ngyWXwo03GFEzjsUm8Q7RZcHPHksttq7/GFoxjCVUjkjvPdw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
 <script>
     function readURL(input) {
     if (input.files && input.files[0]) {

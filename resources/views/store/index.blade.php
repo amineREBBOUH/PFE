@@ -29,9 +29,9 @@
             <select name="" id="categoriesItems">
               <option selected disabled>Choose one</option>
               <option value="games">Games</option>
-              <option value="films">IPTV</option>
+              <option value="software">software</option>
               <option value="books">Books</option>
-              <option value="films">Films</option>
+              <option value="subscriptions">subscriptions</option>
             </select>
           </div>
           <div class="items">

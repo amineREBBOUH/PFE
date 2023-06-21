@@ -6,9 +6,9 @@
         <select name="category" id="">
           <option selected disabled>Choose </option>
           <option value="games">Games</option>
-          <option value="iptv">IPTV</option>
+          <option value="software">software</option>
           <option value="books">Books</option>
-          <option value="films">Films</option>
+          <option value="subscriptions">subscriptions</option>
         </select>
         <input type="search" name="name" id="" placeholder="searche....?" />
         <button>search</button>
@@ -52,9 +52,9 @@
       <select name="category" id="">
         <option selected disabled>Choose one</option>
         <option value="games">Games</option>
-          <option value="iptv">IPTV</option>
+          <option value="software">software</option>
           <option value="books">Books</option>
-          <option value="films">Films</option>
+          <option value="subscriptions">subscriptions</option>
       </select>
       <input type="search" name="name" id="" placeholder="searche....?" />
       <button>search</button>
